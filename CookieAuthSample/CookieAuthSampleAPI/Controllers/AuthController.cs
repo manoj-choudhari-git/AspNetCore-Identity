@@ -66,6 +66,12 @@ namespace CookieAuthSampleAPI.Controllers
                 return new BadRequestObjectResult(new { Message = "Login failed" });
             }
 
+            var result = userManager.PasswordHasher.VerifyHashedPassword(identityUser, identityUser.PasswordHash, credentials.Password);
+            if (result == PasswordVerificationResult.Failed)
+            {
+                return new BadRequestObjectResult(new { Message = "Login failed" });
+            }
+
             var claims = new List<Claim>
             {
                 new Claim(ClaimTypes.Email, identityUser.Email),

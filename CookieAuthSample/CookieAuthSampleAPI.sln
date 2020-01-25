@@ -3,7 +3,12 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29613.14
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CookieAuthSampleAPI", "CookieAuthSampleAPI\CookieAuthSampleAPI.csproj", "{4278326A-A47C-43BA-958D-8F83E8639E0C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CookieAuthSampleAPI", "CookieAuthSampleAPI\CookieAuthSampleAPI.csproj", "{4278326A-A47C-43BA-958D-8F83E8639E0C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Postman-Collection", "Postman-Collection", "{288B75D6-78DF-4F8A-821B-FE250A445997}"
+	ProjectSection(SolutionItems) = preProject
+		..\..\..\..\Desktop\CookieAuthSample.postman_collection.json = ..\..\..\..\Desktop\CookieAuthSample.postman_collection.json
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
