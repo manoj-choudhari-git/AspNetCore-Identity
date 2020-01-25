@@ -34,15 +34,7 @@ namespace CookieAuthSampleAPI
             services.AddIdentity<IdentityUser, IdentityRole>(options => options.SignIn.RequireConfirmedAccount = true)
                 .AddEntityFrameworkStores<ApplicationDbContext>();
 
-            services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
-                .AddCookie(CookieAuthenticationDefaults.AuthenticationScheme, options =>
-                {
-                    options.SlidingExpiration = true;
-                    options.ExpireTimeSpan = new TimeSpan(0, 1, 0);
-                });
-
             services.AddControllers();
-
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -57,7 +49,6 @@ namespace CookieAuthSampleAPI
 
             app.UseRouting();
             
-            app.UseAuthentication();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
