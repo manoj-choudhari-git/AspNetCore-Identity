@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CookieAuthSampleAPI", "Cook
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Postman-Collection", "Postman-Collection", "{288B75D6-78DF-4F8A-821B-FE250A445997}"
 	ProjectSection(SolutionItems) = preProject
-		..\..\..\..\Desktop\CookieAuthSample.postman_collection.json = ..\..\..\..\Desktop\CookieAuthSample.postman_collection.json
+		Postman-Collection\CookieAuthSample.postman_collection.json = Postman-Collection\CookieAuthSample.postman_collection.json
 	EndProjectSection
 EndProject
 Global
