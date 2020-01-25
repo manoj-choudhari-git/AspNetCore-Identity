@@ -1,7 +1,7 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace CookieAuthSampleAPI.Migrations
+namespace IdentityConfigurationSample.Migrations
 {
     public partial class First : Migration
     {

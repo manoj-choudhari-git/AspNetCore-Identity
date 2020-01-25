@@ -1,13 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
-using CookieAuthSampleAPI.Models;
-using Microsoft.AspNetCore.Authorization;
+using IdentityConfigurationSample.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 
-namespace CookieAuthSampleAPI.Controllers
+namespace IdentityConfigurationSample.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]

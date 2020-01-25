@@ -1,6 +1,6 @@
 using System;
 
-namespace CookieAuthSampleAPI.Models
+namespace IdentityConfigurationSample.Models
 {
     public class WeatherForecast
     {
