@@ -10,7 +10,7 @@ using Microsoft.Extensions.Logging;
 
 namespace CookieAuthSampleAPI.Controllers
 {
-    [Authorize]
+    [Authorize(AuthenticationSchemes = CookieAuthenticationDefaults.AuthenticationScheme)]
     [ApiController]
     [Route("api/[controller]")]
     public class WeatherForecastController : ControllerBase
