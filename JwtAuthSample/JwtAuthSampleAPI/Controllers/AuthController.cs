@@ -1,15 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
-using System.Linq;
 using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
 using JwtAuthSampleAPI.Configuration;
 using JwtAuthSampleAPI.Models;
-using Microsoft.AspNetCore.Authentication;
-using Microsoft.AspNetCore.Authentication.Cookies;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
@@ -22,12 +17,12 @@ namespace JwtAuthSampleAPI.Controllers
     [ApiController]
     public class AuthController : ControllerBase
     {
-        private readonly AppSettings appSettings;
+        private readonly JwtBearerTokenSettings jwtBearerTokenSettings;
         private readonly UserManager<IdentityUser> userManager;
 
-        public AuthController(IOptions<AppSettings> appSettings, UserManager<IdentityUser> userManager)
+        public AuthController(IOptions<JwtBearerTokenSettings> jwtTokenOptions, UserManager<IdentityUser> userManager)
         {
-            this.appSettings = appSettings.Value;
+            this.jwtBearerTokenSettings = jwtTokenOptions.Value;
             this.userManager = userManager;
         }
 
@@ -77,15 +72,9 @@ namespace JwtAuthSampleAPI.Controllers
         [Route("Logout")]
         public async Task<IActionResult> Logout()
         {
-            var tokenHandler = new JwtSecurityTokenHandler();
-            var key = Encoding.ASCII.GetBytes(appSettings.SecretKey);
-            var tokenDescriptor = new SecurityTokenDescriptor
-            {
-                Expires = DateTime.UtcNow.AddMinutes(-1),
-                SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
-            };
-
-            var token = tokenHandler.CreateToken(tokenDescriptor);
+            // Well, What do you want to do here ?
+            // Wait for token to get expired OR 
+            // Maintain token cache and invalidate the tokens after logout method is called
             return Ok(new { Token = token, Message = "Logged Out" });
         }
 
@@ -105,7 +94,8 @@ namespace JwtAuthSampleAPI.Controllers
         private object GenerateToken(IdentityUser identityUser)
         {
             var tokenHandler = new JwtSecurityTokenHandler();
-            var key = Encoding.ASCII.GetBytes(appSettings.SecretKey);
+            var key = Encoding.ASCII.GetBytes(jwtBearerTokenSettings.SecretKey);
+
             var tokenDescriptor = new SecurityTokenDescriptor
             {
                 Subject = new ClaimsIdentity(new Claim[]
@@ -113,8 +103,11 @@ namespace JwtAuthSampleAPI.Controllers
                     new Claim(ClaimTypes.Name, identityUser.UserName.ToString()),
                     new Claim(ClaimTypes.Email, identityUser.Email)
                 }),
-                Expires = DateTime.UtcNow.AddMinutes(1),
-                SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
+
+                Expires = DateTime.UtcNow.AddSeconds(jwtBearerTokenSettings.ExpiryTimeInSeconds),
+                SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature),
+                Audience = jwtBearerTokenSettings.Audience,
+                Issuer = jwtBearerTokenSettings.Issuer
             };
 
             var token = tokenHandler.CreateToken(tokenDescriptor);
