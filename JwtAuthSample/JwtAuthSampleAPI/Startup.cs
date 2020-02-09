@@ -52,14 +52,9 @@ namespace JwtAuthSampleAPI
                 options.SaveToken = true;
                 options.TokenValidationParameters = new TokenValidationParameters()
                 {
-                    ValidateLifetime = true,
-                    ValidateIssuer = true,
                     ValidIssuer = jwtBearerTokenSettings.Issuer,
-                    ValidateAudience = true,
                     ValidAudience = jwtBearerTokenSettings.Audience,
-                    ValidateIssuerSigningKey = true,
                     IssuerSigningKey = new SymmetricSecurityKey(key),
-                    ClockSkew = TimeSpan.Zero
                 };
             });
         }

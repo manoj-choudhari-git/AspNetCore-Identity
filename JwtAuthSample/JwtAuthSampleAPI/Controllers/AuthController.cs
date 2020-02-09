@@ -75,7 +75,7 @@ namespace JwtAuthSampleAPI.Controllers
             // Well, What do you want to do here ?
             // Wait for token to get expired OR 
             // Maintain token cache and invalidate the tokens after logout method is called
-            return Ok(new { Token = token, Message = "Logged Out" });
+            return Ok(new { Token = "", Message = "Logged Out" });
         }
 
         private async Task<IdentityUser> ValidateUser(LoginCredentials credentials)
