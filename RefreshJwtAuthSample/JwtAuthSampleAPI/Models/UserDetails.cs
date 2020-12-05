@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace JwtAuthSampleAPI.Models
+namespace JwtAuthRefreshTokenSampleAPI.Models
 {
     public class UserDetails
     {

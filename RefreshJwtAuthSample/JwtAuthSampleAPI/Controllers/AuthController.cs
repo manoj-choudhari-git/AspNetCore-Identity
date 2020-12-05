@@ -7,9 +7,9 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
-using JwtAuthSampleAPI.Configuration;
-using JwtAuthSampleAPI.Data;
-using JwtAuthSampleAPI.Models;
+using JwtAuthRefreshTokenSampleAPI.Configuration;
+using JwtAuthRefreshTokenSampleAPI.Data;
+using JwtAuthRefreshTokenSampleAPI.Models;
 
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
@@ -20,7 +20,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 
-namespace JwtAuthSampleAPI.Controllers
+namespace JwtAuthRefreshTokenSampleAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]

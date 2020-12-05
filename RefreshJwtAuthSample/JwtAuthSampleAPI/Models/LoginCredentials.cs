@@ -1,4 +1,4 @@
-﻿namespace JwtAuthSampleAPI.Models
+﻿namespace JwtAuthRefreshTokenSampleAPI.Models
 {
     public class LoginCredentials
     {

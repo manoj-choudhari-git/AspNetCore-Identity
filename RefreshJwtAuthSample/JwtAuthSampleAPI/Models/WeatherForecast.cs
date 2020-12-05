@@ -1,6 +1,6 @@
 using System;
 
-namespace JwtAuthSampleAPI.Models
+namespace JwtAuthRefreshTokenSampleAPI.Models
 {
     public class WeatherForecast
     {

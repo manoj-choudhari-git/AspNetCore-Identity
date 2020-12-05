@@ -1,4 +1,4 @@
-﻿namespace JwtAuthSampleAPI.Configuration
+﻿namespace JwtAuthRefreshTokenSampleAPI.Configuration
 {
     public class JwtBearerTokenSettings
     {

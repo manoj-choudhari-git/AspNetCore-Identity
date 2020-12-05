@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using System.Collections.Generic;
 
-namespace JwtAuthSampleAPI.Data
+namespace JwtAuthRefreshTokenSampleAPI.Data
 {
     public class ApplicationUser: IdentityUser
     {

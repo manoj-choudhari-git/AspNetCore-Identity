@@ -1,7 +1,7 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace JwtAuthSampleAPI.Migrations
+namespace JwtAuthRefreshTokenSampleAPI.Migrations
 {
     public partial class Second : Migration
     {

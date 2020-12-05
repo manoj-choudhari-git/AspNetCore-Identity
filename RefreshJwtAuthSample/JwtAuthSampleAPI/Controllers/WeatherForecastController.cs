@@ -2,13 +2,13 @@
 using System.Collections.Generic;
 using System.Linq;
 
-using JwtAuthSampleAPI.Models;
+using JwtAuthRefreshTokenSampleAPI.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 
 
-namespace JwtAuthSampleAPI.Controllers
+namespace JwtAuthRefreshTokenSampleAPI.Controllers
 {
     [Authorize]
     [ApiController]

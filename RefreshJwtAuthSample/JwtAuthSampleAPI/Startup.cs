@@ -1,7 +1,7 @@
 using System;
 using System.Text;
-using JwtAuthSampleAPI.Configuration;
-using JwtAuthSampleAPI.Data;
+using JwtAuthRefreshTokenSampleAPI.Configuration;
+using JwtAuthRefreshTokenSampleAPI.Data;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -12,7 +12,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.IdentityModel.Tokens;
 
-namespace JwtAuthSampleAPI
+namespace JwtAuthRefreshTokenSampleAPI
 {
     public class Startup
     {

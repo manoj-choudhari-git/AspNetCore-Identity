@@ -1,7 +1,7 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
 
-namespace JwtAuthSampleAPI.Data
+namespace JwtAuthRefreshTokenSampleAPI.Data
 {
     public class RefreshToken
     {

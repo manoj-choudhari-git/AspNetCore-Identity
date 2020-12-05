@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
-namespace JwtAuthSampleAPI.Data
+namespace JwtAuthRefreshTokenSampleAPI.Data
 {
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {

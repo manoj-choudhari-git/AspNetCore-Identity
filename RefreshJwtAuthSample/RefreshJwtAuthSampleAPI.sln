@@ -5,10 +5,10 @@ VisualStudioVersion = 16.0.29613.14
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Postman-Collection", "Postman-Collection", "{288B75D6-78DF-4F8A-821B-FE250A445997}"
 	ProjectSection(SolutionItems) = preProject
-		refresh-token-aspnetcore-sample-postman-setup.json = refresh-token-aspnetcore-sample-postman-setup.json
+		Postman-Collection\refresh-token-aspnetcore-sample-postman-setup.json = Postman-Collection\refresh-token-aspnetcore-sample-postman-setup.json
 	EndProjectSection
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JwtAuthSampleAPI", "JwtAuthSampleAPI\JwtAuthSampleAPI.csproj", "{57E8F9AB-42FF-448B-8673-3888EC00934D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JwtAuthRefreshTokenSampleAPI", "JwtAuthSampleAPI\JwtAuthRefreshTokenSampleAPI.csproj", "{57E8F9AB-42FF-448B-8673-3888EC00934D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
